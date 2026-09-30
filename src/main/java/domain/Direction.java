@@ -1,6 +1,6 @@
 package domain;
 
-import application.Period;
+import main.application.Period;
 
 import java.time.LocalDateTime;
 import java.util.Map;
