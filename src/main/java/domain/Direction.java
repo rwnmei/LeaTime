@@ -1,7 +1,6 @@
 package domain;
 
-import main.application.Period;
-
+import application.Period;
 import java.time.LocalDateTime;
 import java.util.Map;
 import java.util.Objects;
@@ -11,7 +10,7 @@ public class Direction {
     private UUID id;
     private String name;
     private Catalog catalog;
-    private Map<LocalDateTime,TimeEntry> timeEntry;
+    private Map<LocalDateTime, TimeEntry> timeEntry;
 
     public Direction(UUID id, String name, Catalog catalog, Map<LocalDateTime, TimeEntry> timeEntry) {
         this.id = id;
@@ -24,7 +23,7 @@ public class Direction {
         this.name = name;
     }
 
-    public void getResults(Period period){
+    public void getResults(Period period) {
 
     }
 
@@ -39,7 +38,6 @@ public class Direction {
     public String getName() {
         return name;
     }
-
 
 
     public Catalog getCatalog() {
