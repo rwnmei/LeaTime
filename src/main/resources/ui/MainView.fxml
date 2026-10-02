@@ -4,12 +4,19 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="ui.сontroller.MainViewController">
+<BorderPane fx:id="rootPanel" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.controller.MainViewController">
 
     <left>
-        <VBox>
-            <Button text="Каталоги"/>
+        <VBox prefWidth="180.0"
+                spacing="10.0"
+                alignment="TOP_CENTER">
+            <Button text="Каталоги"
+                    maxWidth="Infinity"
+            onAction="#handleCatalogs"/>
+            <Button text="Таймер"
+                    maxWidth="Infinity"
+                    onAction="#handleTimer"/>
         </VBox>
     </left>
 

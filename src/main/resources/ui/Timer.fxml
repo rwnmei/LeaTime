@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="ui.controller.TimerController"
+      spacing="10">
+
+    <Label text="Таймер"/>
+    <ComboBox fx:id="directionComboBox"
+              promptText="Выберите направление"/>
+
+    <Label text="00:00:00"/>
+    <Button text="Старт"/>
+    <Button text="Пауза"/>
+    <Button text="Стоп"/>
+
+
+
+</VBox>
