@@ -1,5 +1,6 @@
 package ui.controller;
 
+import domain.Catalog;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -22,6 +23,8 @@ public class MainViewController {
         System.out.println("Нажали Каталоги");
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/ui/Catalog.fxml"));
         Parent catalogView = loader.load();
+        CatalogController controller = loader.getController();
+        controller.setRootPanel(rootPanel);
         rootPanel.setCenter(catalogView);
     }
     @FXML

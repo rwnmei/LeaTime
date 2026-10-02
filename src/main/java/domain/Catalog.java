@@ -1,6 +1,4 @@
 package domain;
-
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
@@ -8,9 +6,10 @@ import java.util.UUID;
 public class Catalog {
     private UUID id;
     private String name;
-    private LocalDateTime time;
     private List<Direction> directions;
 
+    public Catalog() {
+    }
 
     public void rename(String name) {
         this.name = name;
@@ -39,13 +38,7 @@ public class Catalog {
 
 
 
-    public LocalDateTime getTime() {
-        return time;
-    }
 
-    public void setTime(LocalDateTime time) {
-        this.time = time;
-    }
 
     public List<Direction> getDirections() {
         return directions;
@@ -55,10 +48,10 @@ public class Catalog {
         this.directions = directions;
     }
 
-    public Catalog(UUID id, String name, LocalDateTime time, List<Direction> directions) {
+    public Catalog(UUID id, String name, List<Direction> directions) {
         this.id = id;
         this.name = name;
-        this.time = time;
+
         this.directions = directions;
     }
 
@@ -66,11 +59,11 @@ public class Catalog {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Catalog catalog = (Catalog) o;
-        return Objects.equals(id, catalog.id) && Objects.equals(name, catalog.name) && Objects.equals(time, catalog.time) && Objects.equals(directions, catalog.directions);
+        return Objects.equals(id, catalog.id) && Objects.equals(name, catalog.name) && Objects.equals(directions, catalog.directions);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, time, directions);
+        return Objects.hash(id, name, directions);
     }
 }
