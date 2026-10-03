@@ -2,6 +2,7 @@ package domain;
 
 import application.Period;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
@@ -9,15 +10,15 @@ import java.util.UUID;
 public class Direction {
     private UUID id;
     private String name;
-    //private Map<LocalDateTime, TimeEntry> timeEntry;
+    private List<TimeEntry> timeEntries;
 
     public Direction() {
     }
 
-    public Direction(UUID id, String name) {
+    public Direction(UUID id, String name,List<TimeEntry> timeEntry) {
         this.id = id;
         this.name = name;
-        //this.timeEntry = timeEntry;
+        this.timeEntries = timeEntry;
     }
 
     public void rename(String name) {
@@ -40,27 +41,27 @@ public class Direction {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 
+    public List<TimeEntry> getTimeEntries() {
+        return timeEntries;
+    }
 
-
-   // public Map<LocalDateTime, TimeEntry> getTimeEntry() {
-    //     return timeEntry;
-    //  }
-
-    //   public void setTimeEntry(Map<LocalDateTime, TimeEntry> timeEntry) {
-    //       this.timeEntry = timeEntry;
-    //  }
-
+    public void setTimeEntries(List<TimeEntry> timeEntries) {
+        this.timeEntries = timeEntries;
+    }
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Direction direction = (Direction) o;
-        return Objects.equals(id, direction.id) && Objects.equals(name, direction.name);
+        return Objects.equals(id, direction.id) && Objects.equals(name, direction.name) && Objects.equals(timeEntries, direction.timeEntries);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name);
+        return Objects.hash(id, name, timeEntries);
     }
 }

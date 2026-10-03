@@ -24,6 +24,7 @@ public class CatalogDetailsController {
     private TextField directionNameField;
     private Catalog catalog;
     private BorderPane rootPanel;
+    DirectionDetailsController controller = new DirectionDetailsController();
     public void setRootPanel(BorderPane rootPanel){
         this.rootPanel = rootPanel;
     }
@@ -51,10 +52,25 @@ public class CatalogDetailsController {
                     setText(null);
                 }else {
                     setText(direction.getName());
+                    setOnMouseClicked(event -> {
+                        try {
+                            System.out.println("Mouse event");
+                            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ui/DirectionDetails.fxml"));
+                            Parent view = loader.load();
+                            rootPanel.setCenter(view);
+                            DirectionDetailsController controller = loader.getController();
+                            controller.setDirection(direction);
+                            controller.setCatalog(catalog);
+                            controller.setRootPanel(rootPanel);
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                    });
                 }
             }
         });
     }
+
 
     public void handleBack(ActionEvent event) {
         System.out.println("BackUp");

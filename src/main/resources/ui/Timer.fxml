@@ -13,10 +13,13 @@
     <ComboBox fx:id="directionComboBox"
               promptText="Выберите направление"/>
 
-    <Label text="00:00:00"/>
-    <Button text="Старт"/>
-    <Button text="Пауза"/>
-    <Button text="Стоп"/>
+    <Label fx:id="timerLabel" text="00:00:00"/>
+    <Button text="Старт"
+    onAction="#handleStart"/>
+    <Button text="Пауза"
+    onAction="#handlePause"/>
+    <Button text="Стоп"
+    onAction="#handleStop"/>
 
 
 
