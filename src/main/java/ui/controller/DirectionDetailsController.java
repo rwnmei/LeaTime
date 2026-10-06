@@ -66,7 +66,8 @@ public class DirectionDetailsController {
     }
 
     public void handleDay(ActionEvent event) {
-        int[] result = statisticService.getTimeByHoursForDay(direction, LocalDate.of(2026, 10, 4));
+        int[] result = statisticService.getTimeByHoursForDay(direction, LocalDate.now());
+        System.out.println("DayResult");
         System.out.println(Arrays.toString(result));
         XYChart.Series<String, Number> series = new XYChart.Series<>();
 
@@ -79,11 +80,47 @@ public class DirectionDetailsController {
     }
 
     public void handleWeek(ActionEvent event) {
+        double[] result = statisticService.getTimeResultForWeek(direction,LocalDate.now());
+        System.out.println("WeekResult");
+        System.out.println(Arrays.toString(result));
+        XYChart.Series<String,Number> series = new XYChart.Series<>();
+
+        for (int i = 0; i < result.length; i++) {
+            series.getData().add(
+                    new XYChart.Data<>(String.valueOf(i),result[i])
+            );
+            timeChart.getData().clear();
+            timeChart.getData().add(series);
+        }
     }
 
     public void handleMonth(ActionEvent event) {
+        double[] result = statisticService.getTimeResultForMonth(direction,LocalDate.now());
+        System.out.println("MonthResult");
+        System.out.println(Arrays.toString(result));
+        XYChart.Series<String,Number> series = new XYChart.Series<>();
+
+        for (int i = 0; i < result.length; i++) {
+            series.getData().add(
+                    new XYChart.Data<>(String.valueOf(i),result[i])
+            );
+            timeChart.getData().clear();
+            timeChart.getData().add(series);
+        }
     }
 
     public void handleYear(ActionEvent event) {
+        double[] result = statisticService.getTimeResultForYear(direction,LocalDate.now());
+        System.out.println("YearResult");
+        System.out.println(Arrays.toString(result));
+        XYChart.Series<String,Number> series = new XYChart.Series<>();
+
+        for (int i = 0; i < result.length; i++) {
+            series.getData().add(
+                    new XYChart.Data<>(String.valueOf(i),result[i])
+            );
+            timeChart.getData().clear();
+            timeChart.getData().add(series);
+        }
     }
 }
