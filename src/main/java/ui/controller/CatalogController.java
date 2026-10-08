@@ -5,9 +5,7 @@ import domain.Catalog;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import persistence.JsonDataStorage;
 import ui.MainView;
@@ -23,6 +21,18 @@ public class CatalogController {
     @FXML
     private TextField catalogNameField;
     private BorderPane rootPanel;
+    @FXML
+    private Button createCatalogButton;
+    @FXML
+    private Label errorLabel;
+
+    private TextFormatter<String> textFormatter = new TextFormatter<>(change -> {
+        if (change.getControlNewText().length() > 255) {
+            return null;
+        }
+
+        return change;
+    });
     public void setRootPanel(BorderPane rootPanel){
         this.rootPanel = rootPanel;
     }
@@ -38,7 +48,7 @@ public class CatalogController {
     
     @FXML
     private void handleCreateCatalog(){
-        System.out.println("Нажимаю на добавить обьект");
+        System.out.println("Tap in create catalog");
         String name = catalogNameField.getText();
         Catalog catalog = catalogService.createCatalog(name);
         storage.addCatalog(catalog);
@@ -46,6 +56,21 @@ public class CatalogController {
     }
     @FXML
     private void initialize() {
+        createCatalogButton.setDisable(true);
+        catalogNameField.textProperty().addListener((obs,old,neww) -> {
+            if (neww.isBlank()) {
+                createCatalogButton.setDisable(true);
+                errorLabel.setText("Название каталога не может быть пустым");
+
+            } else if (neww.length() > 255) {
+                createCatalogButton.setDisable(true);
+                errorLabel.setText("Название каталога не может содержать более 255 символов");
+
+            } else {
+                createCatalogButton.setDisable(false);
+                errorLabel.setText("");
+            }
+        });
         List<Catalog> catalogs = storage.loadCatalog();
         catalogList.getItems().addAll(catalogs);
         catalogList.setCellFactory(listView -> new ListCell<>(){

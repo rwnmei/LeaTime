@@ -14,9 +14,11 @@
 
     <Button text="Назад"
             onAction="#handleBack"/>
-    <Button text="Создать направление"
+    <Button fx:id="createDirectionButton"
+            text="Создать направление"
             onAction="#handleCreateDirection"/>
     <Label text="Направления"/>
+    <Label fx:id="errorDirection"/>
     <ListView fx:id="directionList"/>
 
 </VBox>

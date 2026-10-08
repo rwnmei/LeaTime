@@ -7,9 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import persistence.JsonDataStorage;
 
@@ -18,6 +16,10 @@ import java.io.IOException;
 public class CatalogDetailsController {
     private final JsonDataStorage storage = new JsonDataStorage();
     private final DirectionService directionService = new DirectionService();
+    @FXML
+    public Button createDirectionButton;
+    @FXML
+    public Label errorDirection;
     @FXML
     private ListView<Direction> directionList;
     @FXML
@@ -44,6 +46,21 @@ public class CatalogDetailsController {
     }
     @FXML
     private void initialize() {
+        createDirectionButton.setDisable(true);
+        directionNameField.textProperty().addListener((obs,old,neww) -> {
+            if (neww.isBlank()) {
+                createDirectionButton.setDisable(true);
+                errorDirection.setText("Название направления не может быть пустым");
+
+            } else if (neww.length() > 255) {
+                createDirectionButton.setDisable(true);
+                errorDirection.setText("Название направления не может содержать более 255 символов");
+
+            } else {
+                createDirectionButton.setDisable(false);
+                errorDirection.setText("");
+            }
+        });
         directionList.setCellFactory(listView -> new ListCell<>(){
             @Override
             protected void updateItem(Direction direction, boolean empty) {
@@ -70,8 +87,6 @@ public class CatalogDetailsController {
             }
         });
     }
-
-
     public void handleBack(ActionEvent event) {
         System.out.println("BackUp");
         try {

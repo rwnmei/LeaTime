@@ -13,9 +13,11 @@
                promptText="Название направления"/>
 
 
-    <Button text="Создать каталог"
+    <Button fx:id="createCatalogButton"
+            text="Создать каталог"
             onAction="#handleCreateCatalog"/>
     <Label text="Каталоги"/>
+    <Label fx:id="errorLabel"/>
     <ListView fx:id="catalogList"/>
 
 </VBox>

@@ -7,6 +7,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
@@ -28,6 +29,12 @@ public class TimerController {
     private final TimeEntryService timeEntryService = new TimeEntryService();
     private LocalDateTime startTime;
     private LocalDateTime endTime;
+    @FXML
+    private Button startButton;
+    @FXML
+    private Button pauseButton;
+    @FXML
+    private Button stopButton;
 
     @FXML
     private void initialize() {

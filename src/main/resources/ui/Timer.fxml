@@ -14,11 +14,14 @@
               promptText="Выберите направление"/>
 
     <Label fx:id="timerLabel" text="00:00:00"/>
-    <Button text="Старт"
+    <Button fx:id="startButton"
+            text="Старт"
     onAction="#handleStart"/>
-    <Button text="Пауза"
+    <Button fx:id="pauseButton"
+            text="Пауза"
     onAction="#handlePause"/>
-    <Button text="Стоп"
+    <Button fx:id="stopButton"
+            text="Стоп"
     onAction="#handleStop"/>
 
 
