@@ -38,6 +38,12 @@ public class DirectionDetailsController {
         );
         timeChart.setTitle("Время");
         timeChart.setLegendVisible(false);
+        timeChart.setLegendVisible(false);
+        timeChart.setAnimated(true);
+        timeChart.setVerticalGridLinesVisible(false);
+        timeChart.setHorizontalGridLinesVisible(true);
+        timeChart.setCategoryGap(12);
+        timeChart.setBarGap(4);
         chartContainer.getChildren().add(timeChart);
     }
     public void setCatalog(Catalog catalog) {

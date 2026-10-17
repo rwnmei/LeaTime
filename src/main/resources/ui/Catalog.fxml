@@ -6,18 +6,19 @@
 <?import javafx.scene.layout.VBox?>
 
 <?import javafx.scene.control.TextField?>
-<VBox xmlns:fx="http://javafx.com/fxml"
+<VBox styleClass="preCatalog" xmlns:fx="http://javafx.com/fxml"
       fx:controller="ui.controller.CatalogController"
       spacing="10">
-    <TextField fx:id="catalogNameField"
+    <TextField styleClass="directionName"
+            fx:id="catalogNameField"
                promptText="Название направления"/>
 
 
-    <Button fx:id="createCatalogButton"
+    <Button styleClass="createCatalog" fx:id="createCatalogButton"
             text="Создать каталог"
             onAction="#handleCreateCatalog"/>
-    <Label text="Каталоги"/>
+    <Label styleClass="сatalogs" text="Каталоги"/>
     <Label fx:id="errorLabel"/>
-    <ListView fx:id="catalogList"/>
+    <ListView styleClass="catalogList" fx:id="catalogList"/>
 
 </VBox>

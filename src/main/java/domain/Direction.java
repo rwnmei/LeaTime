@@ -1,6 +1,5 @@
 package domain;
 
-import application.Period;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
@@ -25,9 +24,6 @@ public class Direction {
         this.name = name;
     }
 
-    public void getResults(Period period) {
-
-    }
 
     public UUID getId() {
         return id;
@@ -48,7 +44,10 @@ public class Direction {
     public List<TimeEntry> getTimeEntries() {
         return timeEntries;
     }
-
+    @Override
+    public String toString() {
+        return name;
+    }
     public void setTimeEntries(List<TimeEntry> timeEntries) {
         this.timeEntries = timeEntries;
     }

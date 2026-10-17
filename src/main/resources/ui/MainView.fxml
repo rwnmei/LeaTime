@@ -8,13 +8,16 @@
             fx:controller="ui.controller.MainViewController">
 
     <left>
-        <VBox prefWidth="180.0"
-                spacing="10.0"
-                alignment="TOP_CENTER">
-            <Button text="Каталоги"
+        <VBox styleClass="sidebar"
+              prefWidth="200.0"
+              spacing="8.0"
+              alignment="TOP_CENTER">
+            <Button styleClass="nav-button"
+                    text="Каталоги"
                     maxWidth="Infinity"
-            onAction="#handleCatalogs"/>
-            <Button text="Таймер"
+                    onAction="#handleCatalogs"/>
+            <Button styleClass="nav-button"
+                    text="Таймер"
                     maxWidth="Infinity"
                     onAction="#handleTimer"/>
         </VBox>

@@ -5,25 +5,24 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns:fx="http://javafx.com/fxml"
+<VBox styleClass="timer"
+        xmlns:fx="http://javafx.com/fxml"
       fx:controller="ui.controller.TimerController"
       spacing="10">
 
     <Label text="Таймер"/>
-    <ComboBox fx:id="directionComboBox"
+    <ComboBox styleClass="timerBox"
+            fx:id="directionComboBox"
               promptText="Выберите направление"/>
 
-    <Label fx:id="timerLabel" text="00:00:00"/>
-    <Button fx:id="startButton"
+    <Label styleClass="timerLabel" fx:id="timerLabel" text="00:00:00"/>
+    <Button styleClass="startButton" fx:id="startButton"
             text="Старт"
     onAction="#handleStart"/>
-    <Button fx:id="pauseButton"
+    <Button styleClass="pauseButton" fx:id="pauseButton"
             text="Пауза"
     onAction="#handlePause"/>
-    <Button fx:id="stopButton"
+    <Button styleClass="stopButton" fx:id="stopButton"
             text="Стоп"
     onAction="#handleStop"/>
-
-
-
 </VBox>

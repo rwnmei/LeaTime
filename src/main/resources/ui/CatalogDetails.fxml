@@ -6,19 +6,21 @@
 <?import javafx.scene.layout.VBox?>
 
 <?import javafx.scene.control.TextField?>
-<VBox xmlns:fx="http://javafx.com/fxml"
+<VBox styleClass="catalog"
+        xmlns:fx="http://javafx.com/fxml"
       fx:controller="ui.controller.CatalogDetailsController"
       spacing="10">
-    <TextField fx:id="directionNameField"
+    <TextField styleClass="textCatalog"
+            fx:id="directionNameField"
                promptText="Название напавления"/>
 
-    <Button text="Назад"
+    <Button styleClass="backCatalog" text="Назад"
             onAction="#handleBack"/>
-    <Button fx:id="createDirectionButton"
+    <Button styleClass="createDirection" fx:id="createDirectionButton"
             text="Создать направление"
             onAction="#handleCreateDirection"/>
-    <Label text="Направления"/>
+    <Label styleClass="Directions" text="Направления"/>
     <Label fx:id="errorDirection"/>
-    <ListView fx:id="directionList"/>
+    <ListView styleClass="listDirection" fx:id="directionList"/>
 
 </VBox>

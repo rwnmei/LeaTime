@@ -2,6 +2,16 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.StackPane?>
-<StackPane xmlns:fx="http://javafx.com/fxml">
-    <Label text="Выберите раздел из меню, что бы начать пользоваться приложением"/>
-</StackPane>
+<?import javafx.scene.layout.VBox?>
+<VBox styleClass="welcomePane"
+      xmlns:fx="http://javafx.com/fxml"
+      alignment="CENTER"
+      spacing="12">
+
+    <Label styleClass="welcomeTitle"
+           text="Добро пожаловать в LeaTime"/>
+
+    <Label styleClass="welcome"
+           text="Выберите раздел в меню слева, чтобы начать работу"
+           wrapText="true"/>
+</VBox>

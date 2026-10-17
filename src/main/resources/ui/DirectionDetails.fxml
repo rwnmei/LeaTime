@@ -7,32 +7,34 @@
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.layout.StackPane?>
-<VBox xmlns:fx="http://javafx.com/fxml"
+<VBox styleClass="direction"
+        xmlns:fx="http://javafx.com/fxml"
       fx:controller="ui.controller.DirectionDetailsController"
       spacing="15">
 
-    <Label text="Название направления"/>
-    <Button text="Назад"
+    <Label styleClass="directionName" text="Название направления"/>
+    <Button styleClass="backDirection" text="Назад"
             onAction="#handleBack"/>
-    <Label text="Последнее время"/>
+    <Label styleClass="lastTime" text="Последнее время"/>
     <Label fx:id="lastTimeLabel"
            text="00:00:00"/>
 
-    <Label text="Общее время"/>
+    <Label styleClass="overallTime" text="Общее время"/>
     <Label fx:id="totalTimeLabel"
            text="00:00:00"/>
-    <StackPane fx:id="chartContainer"
+    <StackPane styleClass="stackPane"
+            fx:id="chartContainer"
                prefHeight="400"/>
-    <Button text="День"
+    <Button styleClass="day" text="День"
             onAction="#handleDay"/>
 
-    <Button text="Неделя"
+    <Button styleClass="week" text="Неделя"
             onAction="#handleWeek"/>
 
-    <Button text="Месяц"
+    <Button styleClass="month" text="Месяц"
             onAction="#handleMonth"/>
 
-    <Button text="Год"
+    <Button styleClass="year" text="Год"
             onAction="#handleYear"/>
 
 </VBox>
