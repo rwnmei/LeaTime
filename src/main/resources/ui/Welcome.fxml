@@ -1,17 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.StackPane?>
+
+<?import javafx.scene.image.ImageView?>
+
 <?import javafx.scene.layout.VBox?>
-<VBox styleClass="welcomePane"
-      xmlns:fx="http://javafx.com/fxml"
-      alignment="CENTER"
-      spacing="12">
 
-    <Label styleClass="welcomeTitle"
-           text="Добро пожаловать в LeaTime"/>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<StackPane fx:id="welcomePane"
+           styleClass="welcomePane"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="ui.controller.WelcomeController">
 
-    <Label styleClass="welcome"
-           text="Выберите раздел в меню слева, чтобы начать работу"
-           wrapText="true"/>
-</VBox>
+    <!-- Персонаж -->
+    <Pane fx:id="petArea"
+          StackPane.alignment="CENTER"
+          pickOnBounds="false">
+        <ImageView fx:id="characterView"
+                   fitWidth="167"
+                   fitHeight="167"
+                   preserveRatio="true"
+                   smooth="false"
+                   layoutX="270"
+                   layoutY="400"/>
+    </Pane>
+
+    <!-- Текст по центру всего экрана -->
+    <VBox alignment="CENTER"
+          spacing="8"
+          mouseTransparent="true">
+
+        <Label styleClass="welcomeTitle"
+               text="Добро пожаловать в LeaTime"/>
+
+        <Label styleClass="welcome"
+               text="Выберите раздел в меню слева, чтобы начать работу"
+               wrapText="true"/>
+    </VBox>
+
+</StackPane>

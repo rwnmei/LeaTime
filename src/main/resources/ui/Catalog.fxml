@@ -19,6 +19,7 @@
             onAction="#handleCreateCatalog"/>
     <Label styleClass="сatalogs" text="Каталоги"/>
     <Label fx:id="errorLabel"/>
-    <ListView styleClass="catalogList" fx:id="catalogList"/>
+    <ListView styleClass="catalogList" fx:id="catalogList"
+    />
 
 </VBox>

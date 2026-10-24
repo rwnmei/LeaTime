@@ -20,6 +20,10 @@
                     text="Таймер"
                     maxWidth="Infinity"
                     onAction="#handleTimer"/>
+            <Button styleClass="nav-button"
+                    text="Домой волтер"
+                    maxWidth="Infinity"
+                    onAction="#handleHome"/>
         </VBox>
     </left>
 

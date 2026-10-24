@@ -28,6 +28,7 @@ public class DirectionDetailsController {
     private final StatisticService statisticService = new StatisticService();
     private BarChart<String, Number> timeChart;
     public void initialize(){
+
         CategoryAxis xAxis = new CategoryAxis();
         NumberAxis yAxis = new NumberAxis();
         xAxis.setLabel("Час");

@@ -1,13 +1,11 @@
 package ui.controller;
 
-import domain.Catalog;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.layout.BorderPane;
-
 import java.io.IOException;
-
 public class MainViewController {
     @FXML
     private BorderPane rootPanel;
@@ -35,4 +33,10 @@ public class MainViewController {
         rootPanel.setCenter(timerView);
     }
 
+    public void handleHome(ActionEvent event) throws IOException {
+        System.out.println("Clicked Home");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/ui/Welcome.fxml"));
+        Parent homeView = loader.load();
+        rootPanel.setCenter(homeView);
+    }
 }
